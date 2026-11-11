@@ -7,9 +7,10 @@ public class PedidoService {
         this.repository = repository;
     }
 
-    public void criarPedido(int id, String cliente, String produto, double valor) {
+    public Pedido criarPedido(int id, String cliente, String produto, double valor) {
         Pedido pedido = new Pedido(id, cliente, produto, valor);
         repository.salvar(pedido);
+        return pedido;
     }
 
     public void exibirPedido(Pedido pedido) {
